@@ -1,0 +1,4 @@
+idempotency_key,instrument_id,venue_id,timestamp,received_at,sequence_id,bid_price,bid_qty,ask_price,ask_qty,last_trade_price,session_status,is_stale
+FIXTURE_VENUE:8ea5bede-f889-58bf-ae84-af53cedd6040:0,8ea5bede-f889-58bf-ae84-af53cedd6040,FIXTURE_VENUE,2024-01-15T04:00:00+00:00,2024-01-15T04:00:01+00:00,0,100.05,50,100.10,50,100.00,OPEN,false
+FIXTURE_VENUE:8ea5bede-f889-58bf-ae84-af53cedd6040:1,8ea5bede-f889-58bf-ae84-af53cedd6040,FIXTURE_VENUE,2024-01-15T04:00:05+00:00,2024-01-15T04:00:06+00:00,1,100.10,100,100.15,100,100.05,OPEN,false
+FIXTURE_VENUE:8ea5bede-f889-58bf-ae84-af53cedd6040:2,8ea5bede-f889-58bf-ae84-af53cedd6040,FIXTURE_VENUE,2024-01-15T04:00:10+00:00,2024-01-15T04:00:11+00:00,2,100.15,75,100.20,75,100.10,OPEN,false
