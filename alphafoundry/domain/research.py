@@ -8,7 +8,7 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
-from .enums import Direction
+from .enums import Direction, RegimeType
 
 
 class FeatureLineageItem(BaseModel):
@@ -62,6 +62,20 @@ class InstrumentRank(BaseModel):
     as_of: datetime
     rank: int = Field(ge=1)
     score: float
+
+
+class RegimeState(BaseModel):
+    """Market regime classification advisory output."""
+
+    model_config = ConfigDict(frozen=True)
+
+    regime_id: UUID = Field(default_factory=uuid.uuid4)
+    instrument_id: UUID
+    as_of: datetime
+    regime: RegimeType
+    confidence: float = Field(ge=0.0, le=1.0)
+    metrics: dict[str, float] = Field(default_factory=dict)
+    detector_version: str
 
 
 class Explanation(BaseModel):

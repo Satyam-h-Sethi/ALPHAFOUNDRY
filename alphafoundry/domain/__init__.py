@@ -31,6 +31,7 @@ from .research import (
     FeatureLineageItem,
     FeatureVector,
     InstrumentRank,
+    RegimeState,
     SessionSummary,
     Signal,
 )
@@ -64,6 +65,7 @@ __all__ = [
     "FeatureVector",
     "Signal",
     "InstrumentRank",
+    "RegimeState",
     # orders
     "ChildOrder",
     "Fill",
