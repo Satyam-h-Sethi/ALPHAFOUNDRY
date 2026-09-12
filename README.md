@@ -116,13 +116,15 @@ pytest --cov=alphafoundry
 
 ## Roadmap & Status
 
+See [`docs/PHASE-CHECKPOINTS.md`](docs/PHASE-CHECKPOINTS.md) for commit hashes and key results per phase.
+
 | Phase | Status | Scope |
 |-------|--------|-------|
-| **00 – Architecture** | Completed | Design documents, domain specifications, data contracts |
-| **01 – Foundation** | Completed | Package scaffolding, immutable domain models, SyntheticAdapter, CI pipeline |
-| **02 – Data Pipeline** | Planned | Ingestion → normalisation → validation → storage |
-| **03 – Analytics** | Planned | Feature engine → signal engine → ranking |
-| **04 – Risk** | Planned | Pre-trade risk engine, kill-switch |
+| **00 – Architecture** | ✅ Complete | Design documents, domain specifications, data contracts |
+| **01 – Foundation** | ✅ Complete | Package scaffolding, immutable domain models, SyntheticAdapter, CI pipeline |
+| **02 – Data Pipeline** | ✅ Complete | Ingestion → normalisation → validation → storage |
+| **03 – Analytics** | ✅ Complete | Feature engine → signal engine → ranking |
+| **04 – Risk** | ⏳ Pending | Pre-trade risk engine, kill-switch |
 | **05 – Execution Simulation** | Planned | Parent/child orders, fill simulation, market-impact |
 | **06 – TCA** | Planned | Benchmark computation, slippage attribution |
 | **07 – AI Layer** | Planned | Research assistant integration |
