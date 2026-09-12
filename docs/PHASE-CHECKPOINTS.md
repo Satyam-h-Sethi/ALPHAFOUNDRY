@@ -26,10 +26,8 @@ Key result:
 - Feature engine, signal engine, regime detection, instrument ranking, historical replay and analytics store implemented.
 
 ## Phase 04 — Risk Engine
-Status: ⏳ Pending
-
+Status: ✅ Complete
+Commit: 555e9a0
 Key result:
-- 
-
-Commit:
-- 
+- Pre-trade risk gate implementing all 7 rules from execution-model.md §9 with fail-fast evaluation.
+- Synchronous in-memory kill switch with audit logging and full deterministic test suite.
