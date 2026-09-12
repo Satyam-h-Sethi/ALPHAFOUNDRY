@@ -27,7 +27,17 @@ Key result:
 
 ## Phase 04 — Risk Engine
 Status: ✅ Complete
-Commit: 555e9a0
+Commit: 75e9312
 Key result:
 - Pre-trade risk gate implementing all 7 rules from execution-model.md §9 with fail-fast evaluation.
 - Synchronous in-memory kill switch with audit logging and full deterministic test suite.
+
+## Phase 05 — Execution Simulation
+Status: ✅ Complete
+Commit: HEAD
+Key result:
+- Full paper execution lifecycle orchestrator linking Risk Engine, Order Slicer, Fill Simulator, Position Tracker, and TCA Engine.
+- Order Slicer supporting TWAP, VWAP, POV, IS, and MARKET algorithms with strict quantity conservation.
+- Deterministic Fill Simulator with linear market impact model, bid-ask spread costs, partial fills, and residual order rescheduling.
+- Real-time signed inventory and gross portfolio exposure tracking feeding into pre-trade risk evaluation.
+- Comprehensive Transaction Cost Analysis (TCA) Engine computing Arrival, VWAP, TWAP, and Close benchmarks and cost attribution metrics.

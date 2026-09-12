@@ -27,6 +27,13 @@ class SessionStatus(StrEnum):
     HALTED = "HALTED"
 
 
+class SimulationSessionStatus(StrEnum):
+    CREATED = "CREATED"
+    RUNNING = "RUNNING"
+    COMPLETED = "COMPLETED"
+    ABORTED = "ABORTED"
+
+
 class TradeSide(StrEnum):
     BUY = "BUY"
     SELL = "SELL"

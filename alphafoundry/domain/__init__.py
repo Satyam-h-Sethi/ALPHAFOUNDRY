@@ -19,6 +19,7 @@ from .enums import (
     SessionStatus,
     SessionType,
     Side,
+    SimulationSessionStatus,
     TradeSide,
     Urgency,
 )
@@ -36,7 +37,7 @@ from .research import (
     Signal,
 )
 from .risk import PositionLimit, RiskConfig, RiskDecision, RuleViolation
-from .sessions import Session
+from .sessions import Session, SimulationSession
 from .tca import TCAReport
 
 __all__ = [
@@ -50,11 +51,13 @@ __all__ = [
     "SessionStatus",
     "SessionType",
     "Side",
+    "SimulationSessionStatus",
     "TradeSide",
     "Urgency",
     # market structure
     "Instrument",
     "Session",
+    "SimulationSession",
     "Venue",
     # market data
     "OHLCBar",

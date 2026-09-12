@@ -8,7 +8,7 @@ from uuid import UUID
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
-from .enums import SessionStatus, SessionType
+from .enums import SessionStatus, SessionType, SimulationSessionStatus
 
 
 class Session(BaseModel):
@@ -31,4 +31,31 @@ class Session(BaseModel):
             raise ValueError("close_time must be timezone-aware")
         if self.close_time <= self.open_time:
             raise ValueError("close_time must be after open_time")
+        return self
+
+
+class SimulationSession(BaseModel):
+    """Controlled execution context grouping parent orders for research/backtesting."""
+
+    model_config = ConfigDict(frozen=True)
+
+    simulation_session_id: UUID = Field(default_factory=uuid.uuid4)
+    name: str = Field(default="default_sim_session")
+    window_start: datetime  # timezone-aware UTC
+    window_end: datetime  # timezone-aware UTC
+    adapter_id: str = "synthetic"
+    universe_id: str = "NSE_NIFTY50"
+    algo_config: dict[str, object] = Field(default_factory=dict)
+    status: SimulationSessionStatus = SimulationSessionStatus.CREATED
+    created_at: datetime
+    updated_at: datetime | None = None
+
+    @model_validator(mode="after")
+    def _window_is_valid(self) -> SimulationSession:
+        if self.window_start.tzinfo is None:
+            raise ValueError("window_start must be timezone-aware")
+        if self.window_end.tzinfo is None:
+            raise ValueError("window_end must be timezone-aware")
+        if self.window_end < self.window_start:
+            raise ValueError("window_end must be >= window_start")
         return self
